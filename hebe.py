@@ -31,11 +31,13 @@ for row in range(2, order_sheet.max_row + 1):
     shmo_sheet.cell(row, 19).value = order_sheet.cell(row, 28).value
     shmo_sheet.cell(row, 20).value = "lb/in"
     shmo_sheet.cell(row, 21).value = order_sheet.cell(row, 40).value
+
     # 4 lines below: separate and convert cm to inch
     dimensions = re.split(r"\*", order_sheet.cell(row, 37).value)
     inch_len = float(re.search(dimensions_pattern, dimensions[0])[1]) / 2.54 + 0.5
     inch_w = float(re.search(dimensions_pattern, dimensions[1])[1]) / 2.54 + 0.5
     inch_h = float(re.search(dimensions_pattern, dimensions[2])[1]) / 2.54 + 0.5
+
     shmo_sheet.cell(row, 22).value = round(inch_len, 2)
     shmo_sheet.cell(row, 23).value = round(inch_w, 2)
     shmo_sheet.cell(row, 24).value = round(inch_h, 2)
