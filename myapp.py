@@ -1,11 +1,11 @@
-import re
+a = [5, 6, 7]
+b = a
+b[0] = 10
+print(a)
+print(b)
 
-x = "16.000(L)*14.000(W)*1.000(H) cm"
-y = re.split(r"\*", x)
-z = re.search(r"([0-9]*\.[0-9]*)\(", y[2])[1]
-float(z)
 
-print(type(z))
-# print(z[1])
-# print(z[2])
-
+c="iloveyou"
+d=c
+d="n"
+print(c, d)
